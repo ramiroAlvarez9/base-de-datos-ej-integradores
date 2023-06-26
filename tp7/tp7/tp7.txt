@@ -1,0 +1,51 @@
+PRACTICA 7 - normalizacion
+
+YBSA
+
+a) 
+
+
+dniPadre                          -> nombrePadre, domicilioPadre
+grupoNinio 		                  -> comidaGrupo             
+dniPadre, nombreNinio             -> fnacNinio, grupoNinio,comidaGrupo
+dniPadre, nombreninio, fechaPago  -> montoPago
+
+
+-- CC: { < dniPadre, nombreNinio, fechaPago > }
+
+Se elige la siguiente PK ya que este conjunto de atributos 
+permite determinar el resto de los mismos.
+
+-- PK: {-- PK: < dniPadre, nombreNinio, fechaPago > }
+
+
+b)
+
+TABLA ORIGINAL 1FN = dniPadre | nombreNinio | nombrePadre | domicilioPadre | fechaPago |fnacNiño | grupoNiño | comidaGrupo | montoPago
+
+
+PADRE  =  < PK dniPadre , nombrePadre , domicilioPadre>
+
+TABLA ORIGINAL - TABLA 1    /* dniPadre | nombreNinio | fechaPago |fnacNiño | grupoNiño | comidaGrupo | montoPago */
+
+HIJO = <PK dniPadre, PK nombreNinio ,fnacNinio, grupoNinio, comidaGrupo> 
+
+RESIDUAL2 = RESIDUAL - TABLA2  /* dniPadre | nombreNinio | fechaPago | montoPago */
+
+PADRE_PAGOS <PK dniPadre | nombreNinio ,fechaPago , montoPago>
+
+RESIDUAL3 = RESIDUAL2 - PADRE_PAGOS /* < dniPadre , nombreNinio , fechaPago > */
+
+
+PADRE        < PK dniPadre , nombrePadre , domicilioPadre>
+HIJO         <PK dniPadre, PK nombreNinio ,fnacNinio, grupoNinio, comidaGrupo> 
+PADRE_PAGOS  <PK dniPadre | nombreNinio ,fechaPago , montoPago>
+RESIDUAL3    < dniPadre , nombreNinio , fechaPago >
+
+3FN
+
+HIJO = <PK dniPadre, PK nombreNinio ,fnacNinio, grupoNinio FK, comidaGrupo> 
+GRUPOCOMIDA = < grupoNinio PK, comidaGrupo > 
+
+
+

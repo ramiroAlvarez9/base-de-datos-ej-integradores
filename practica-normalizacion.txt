@@ -1,0 +1,60 @@
+PRACTICA 7 - normalizacion
+
+YBSA
+
+a) 
+
+dniPadre                          -> nombrePadre, domicilioPadre
+grupoNinio 		          -> comidaGrupo             
+dniPadre, nombreNinio             -> fnacNinio, grupoNinio,comidaGrupo
+dniPadre, nombreninio, fechaPago  -> montoPago
+
+
+
+
+
+-- CC: { < dniPadre, nombreNinio, fechaPago > }
+
+
+Se elige la siguiente PK ya que este conjunto de atributos 
+permite determinar el resto de los mismos.
+
+-- PK: {-- PK: < dniPadre, nombreNinio, fechaPago > }
+
+
+b)
+
+
+
+dniPadre | nombreNinio | nombrePadre | domicilioPadre | fechaPago |fnacNiño | grupoNiño | comidaGrupo | montoPago
+
+
+
+TABLA 1  =  < PK dniPadre , nombrePadre , domicilioPadre>
+
+RESIDUAL =  dniPadre | nombreNinio | fechaPago |fnacNiño | grupoNiño | comidaGrupo | montoPago 
+
+TABLA 2 = <PK dniPadre, PK nombreNinio ,fnacNinio, grupoNinio, comidaGrupo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

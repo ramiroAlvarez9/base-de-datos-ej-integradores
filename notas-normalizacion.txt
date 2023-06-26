@@ -1,0 +1,66 @@
+FN'S notas 2FN 3FN
+
+Normalizar: Llevar el esquema de la base de datos a una de las formas normales.
+
+-Para esto se requiere conocer el concepto de forma normal, y dep funcional.
+
+LA 2DA, 3RA Y 4TA FN, se definen con dependencias funcionales.
+
+
+2FN: Existe cuando :
+
+	 -  La tabla está en 1FN
+	 -  No existen dependencias parciales
+	    (todos los atr de la tabla dependen de una sola clave primaria)
+	 
+	
+	
+
+3FN:
+	-la tabla esta en 1FN y en 2FN
+        - Hay un atributo X que no depende totalmente de la clave primaria, pero existe dentro de la misma.
+        
+Definicion formal:
+Una relacion R esta en 3FN si está en 2FN y ningun atributo no primo depende de R depende transitivamente de la clave primaria. 
+
+Dependencia transitiva:
+X -> Y es transitiva si existe un conjunto de atributos
+Z que no sean subconjunto de la clave primaria de R. 
+Y se cumplen que X -> Z y Z -> Y.
+   
+   
+_____________
+
+ALGORITMO DE NORMALIZACION:
+
+
+1) Identificar dep funcionales
+2) Identificar clave primaria de la relacion
+3) En base a la clave primaria, identificar en que forma esta la relacion
+
+ 
+a) para llevar a 2da FN, eliminaremos dependencias parciales.
+
+b) para llevar a 3ra FN nos aseguramos que esta en 2fn y eliminamos dep transitivas.
+
+c) Para llevar a 4fn, nos aseguramos estar en 3ra forma normal, y elimnamos dep multivaluadas.
+
+
+-- DETERMINAR CLAVE PRIMARIA:
+
+
+<A,B,C,D,E>
+PK = {A,B,D} - {D} + {} = {A,B}
+
+
+
+
+
+____________________________________
+
+4FN:
+
+	- La tabla debe estar en 3FN
+	- No deben haber dependencias multivaluadas
+	
+ 
